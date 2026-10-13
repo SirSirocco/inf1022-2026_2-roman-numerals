@@ -6,7 +6,7 @@ class TestRoman:
     min_val = 1
     max_val = 3999
 
-    def test_INTEGER2ROMAN_converts_each_char_in_ivxlcdm(self):
+    def test_INTEGER_2_ROMAN_converts_each_char_in_ivxlcdm(self):
         assert self.roman.integer2roman(1) == "I"
         assert self.roman.integer2roman(5) == "V"
         assert self.roman.integer2roman(10) == "X"
@@ -15,11 +15,11 @@ class TestRoman:
         assert self.roman.integer2roman(500) == "D"
         assert self.roman.integer2roman(1000) == "M"
 
-    def test_INTEGER2ROMAN_converts_min_and_max_vals(self):
+    def test_INTEGER_2_ROMAN_converts_min_and_max_vals(self):
         assert self.roman.integer2roman(self.min_val) == "I"
         assert self.roman.integer2roman(self.max_val) == "MMMCMXCIX"
 
-    def test_INTEGER2ROMAN_rejects_vals_out_of_min_and_max(self):
+    def test_INTEGER_2_ROMAN_rejects_vals_out_of_min_and_max(self):
         below_min = 0
         above_max = 4000
         assert self.roman.integer2roman(below_min) == None
@@ -61,7 +61,7 @@ class TestRoman:
     def test_IS_VALID_ROMAN_rejects_middle_whitespaces(self):
         assert not self.roman.is_valid_roman("M \n M")
 
-    def test_ROMAN2INTEGER_converts_all_possible_cases(self):
+    def test_ROMAN_2_INTEGER_converts_all_possible_cases(self):
         for integer in range(self.min_val, self.max_val + 1):
             roman = self.roman.integer2roman(integer)
             actual = self.roman.roman2integer(roman)
